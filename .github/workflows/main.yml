@@ -24,4 +24,4 @@ jobs:
         push: true
         tags: |
           sarasalah24/devops-app:latest
-          Ss2468101314!/devops-app:${{ github.sha }}
+          sarasalah24/devops-app:${{ github.sha }}
