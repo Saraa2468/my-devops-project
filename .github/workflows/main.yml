@@ -2,11 +2,11 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ main ] 
+    branches: [ main ] # تشغيل هذا السير العمل عند الرفع على فرع main فقط
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest # استخدام نظام تشغيل Linux للبناء
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4 # سحب الكود من GitHub
@@ -14,7 +14,7 @@ jobs:
     - name: Docker Login
       uses: docker/login-action@v3
       with:
-        username: ${{ secrets.sarasalah24 }} 
+        username: ${{ secrets.sarasalah24 }} # متغيرات سرية سنتحدث عنها لاحقا
         password: ${{ secrets.Ss2468101314 }}
 
     - name: Build and Push Docker image
@@ -25,4 +25,3 @@ jobs:
         tags: |
           sarasalah24/devops-app:latest
           sarasalah24/devops-app:${{ github.sha }}
-          
