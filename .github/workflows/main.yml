@@ -15,7 +15,7 @@ jobs:
       uses: docker/login-action@v3
       with:
         username: ${{ secrets.sarasalah24 }} # متغيرات سرية سنتحدث عنها لاحقا
-        password: ${{ secrets.Ss2468101314 }}
+        password: ${{ secrets.Ss24681013 }}
 
     - name: Build and Push Docker image
       uses: docker/build-push-action@v6
