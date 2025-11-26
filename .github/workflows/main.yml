@@ -14,8 +14,8 @@ jobs:
     - name: Docker Login
       uses: docker/login-action@v3
       with:
-        username: ${{ secrets.sarasalah24 }} # متغيرات سرية سنتحدث عنها لاحقا
-        password: ${{ secrets.Ss24681013 }}
+        username: ${{ secrets.DOCKER_USERNAME}}     
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and Push Docker image
       uses: docker/build-push-action@v6
@@ -23,5 +23,5 @@ jobs:
         context: .
         push: true
         tags: |
-          sarasalah24/devops-app:latest
-          sarasalah24/devops-app:${{ github.sha }}
+          DOCKER_USERNAME/devops-app:latest
+          DOCKER_USERNAME/devops-app:${{ github.sha }}
